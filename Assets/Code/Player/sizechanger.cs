@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerSizeManager : MonoBehaviour
 {
-    // This creates a slot in the inspector to safely link your health script
     [Header("References")]
     public PlayerHealth playerHealth;
+    public GunIsPistol gunScript; // Directly reference your GunIsPistol script
 
     [Header("Scales")]
     public Vector3 normalScale = new Vector3(1f, 1f, 1f);
@@ -12,31 +12,45 @@ public class PlayerSizeManager : MonoBehaviour
 
     private void Start()
     {
-        // Automatically look for the script on the same GameObject if you forgot to drag it
-        if (playerHealth == null)
-        {
-            playerHealth = GetComponent<PlayerHealth>();
-        }
+        if (playerHealth == null) playerHealth = GetComponent<PlayerHealth>();
+        // Automatically find the gun script if not assigned
+        if (gunScript == null) gunScript = GetComponentInChildren<GunIsPistol>();
     }
 
     private void Update()
     {
-        // Safety check: if the health script isn't found yet, do nothing to prevent errors
         if (playerHealth == null) return;
 
-        // Halfway point calculation (50 if maxHealth is 100)
-        float threshold = playerHealth.maxHealth / 2f;
-
-        // Check health value and swap scales cleanly
-        if (playerHealth.health <= threshold)
+        if (playerHealth.health <= 1f) // TINY STATE
         {
-            // HP State 1: Tiny
             transform.localScale = normalScale;
+
+            // Disable shooting component
+            if (gunScript != null) gunScript.enabled = false;
+
+            // Force ammo to zero
+            ForceAmmoToZero();
         }
-        else
+        else // BIG STATE
         {
-            // HP State 2: Big
             transform.localScale = bigScale;
+
+            // Re-enable shooting
+            if (gunScript != null) gunScript.enabled = true;
+        }
+    }
+
+    void ForceAmmoToZero()
+    {
+        // Find all guns and set ammoAmount to 0 directly
+        GunIsPistol[] guns = GetComponentsInChildren<GunIsPistol>();
+        foreach (var gun in guns)
+        {
+            if (gun.ammoAmount > 0)
+            {
+                gun.ammoAmount = 0;
+                gun.UpdateAmmoDisplay();
+            }
         }
     }
 }

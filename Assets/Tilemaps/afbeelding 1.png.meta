@@ -8152,10 +8152,10 @@ TextureImporter:
       name: afbeelding 1_323
       rect:
         serializedVersion: 2
-        x: 176
-        y: 396
-        width: 16
-        height: 16
+        x: 180
+        y: 402
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8174,10 +8174,10 @@ TextureImporter:
       name: afbeelding 1_324
       rect:
         serializedVersion: 2
-        x: 192
-        y: 396
-        width: 16
-        height: 16
+        x: 190
+        y: 402
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8196,10 +8196,10 @@ TextureImporter:
       name: afbeelding 1_325
       rect:
         serializedVersion: 2
-        x: 208
-        y: 396
-        width: 16
-        height: 16
+        x: 210
+        y: 402
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -10748,10 +10748,10 @@ TextureImporter:
       name: afbeelding 1_441
       rect:
         serializedVersion: 2
-        x: 224
-        y: 332
-        width: 16
-        height: 16
+        x: 200
+        y: 402
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
