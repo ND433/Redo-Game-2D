@@ -168,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.17357111, y: 0.16306868}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.011
 --- !u!114 &8210576024716606839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,11 +181,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1931bbad068eb1243bada0847b0df4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoPickup
+  destructionDelay: 0.5
+  pickupSound: {fileID: 8300000, guid: 5cd0d3f279eac2d4b87636bc2b863ae6, type: 3}
+  volume: 1
+  isDragging: 0
+  moveSpeed: 2
+  targetSceneTextName: GemScoreText
   targetGunName: Pistol
   ammoToGive: 999
-  moveSpeed: 2
-  isDragging: 0
-  destructionDelay: 0.5
 --- !u!95 &5788143581085196579
 Animator:
   serializedVersion: 7
@@ -220,5 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431d2a7ef5c441c47b57ec27be58b3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealingPickup
-  healAmount: 1
   destructionDelay: 0.5
+  pickupSound: {fileID: 0}
+  volume: 1
+  isDragging: 0
+  moveSpeed: 5
+  targetSceneTextName: GemScoreText
+  healAmount: 1

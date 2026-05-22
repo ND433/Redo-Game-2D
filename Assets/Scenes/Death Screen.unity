@@ -468,6 +468,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauzeMenuAndSceneLoader
   menuCanvas: {fileID: 0}
+  menuButtons:
+  - {fileID: 1155413043}
+  - {fileID: 576859529}
 --- !u!4 &492586274
 Transform:
   m_ObjectHideFlags: 0
@@ -496,7 +499,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8294022ca89294a4db14db14c3e85ddb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -672,7 +675,7 @@ GameObject:
   - component: {fileID: 576859530}
   - component: {fileID: 576859529}
   m_Layer: 0
-  m_Name: Respawn BT
+  m_Name: 1-1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -942,7 +945,7 @@ GameObject:
   - component: {fileID: 1155413044}
   - component: {fileID: 1155413043}
   m_Layer: 0
-  m_Name: Back BT
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,24 +1,20 @@
 using UnityEngine;
-using System.Collections;
 
-public class HealingPickup : MonoBehaviour
+public class HealingPickup : PickupBase
 {
-    //heal amount
+    [Header("Healing Settings")]
     public float healAmount = 10f;
-    //delay before pickup dies
-    public float destructionDelay = 0.5f;
 
-    //get animator
-    private Animator anim;
-    //flag to prevent multiple pickups
-    private bool isCollected = false;
-
-    private void Start()
+    protected override void Start()
     {
-        // Get the Animator from pickup
-        anim = GetComponent<Animator>();
+        base.Start();
     }
-    //trigger and no trigger interaction idk why added both
+
+    protected override void UpdateUI()
+    {
+        SetUIText(healAmount.ToString());
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         ProcessPickup(other.gameObject);
@@ -29,34 +25,18 @@ public class HealingPickup : MonoBehaviour
         ProcessPickup(collision.gameObject);
     }
 
-    //pickup logic
     private void ProcessPickup(GameObject user)
     {
         if (isCollected) return;
 
-        PlayerHealth healthScript = user.GetComponent<PlayerHealth>();
-
-        if (healthScript != null)
+        if (user.CompareTag("Player"))
         {
-            isCollected = true;
-            healthScript.Heal(healAmount);
-
-            StartCoroutine(PlayAnimationAndDestroy());
+            PlayerHealth healthScript = user.GetComponent<PlayerHealth>();
+            if (healthScript != null)
+            {
+                healthScript.Heal(healAmount);
+                StartCoroutine(PlayEffectsAndDestroy());
+            }
         }
-    }
-    //play pickup animation and destroy after delay
-    private IEnumerator PlayAnimationAndDestroy()
-    {
-        if (anim != null)
-        {
-            anim.SetBool("IsPickuped", true);
-        }
-
-        if (GetComponent<Collider2D>() != null)
-            GetComponent<Collider2D>().enabled = false;
-
-        yield return new WaitForSeconds(destructionDelay);
-
-        Destroy(gameObject);
     }
 }

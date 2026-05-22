@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class EnemyWaypoints : MonoBehaviour
 {
-    //i like yellow u can change tho
     public Color pathColor = Color.yellow;
-    //put this on mother with kids it takes all kids
     public Transform[] GetWaypoints()
     {
         int childCount = transform.childCount;
@@ -17,7 +15,6 @@ public class EnemyWaypoints : MonoBehaviour
         }
         return points;
     }
-    //draw line between kids in editor
     private void OnDrawGizmos()
     {
         Transform[] points = GetWaypoints();

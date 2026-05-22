@@ -167,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.13585971, y: 0.097985364}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.011
 --- !u!95 &-7020587066029524024
 Animator:
   serializedVersion: 7
@@ -202,8 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea8c04ba21df6247a23035234fc4a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScorePickup
-  scoreValue: 1
   destructionDelay: 0.5
   pickupSound: {fileID: 8300000, guid: 5f943ef669e713245b78f97f52e7c175, type: 3}
   volume: 1
-  scoreTextObject: {fileID: 0}
+  isDragging: 0
+  moveSpeed: 5
+  targetSceneTextName: gem
+  scoreValue: 100

@@ -168,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.13585971, y: 0.097985364}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.011
 --- !u!95 &-7020587066029524024
 Animator:
   serializedVersion: 7
@@ -203,6 +203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d43d90ced27f1b419f3a514913f9291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUp
+  destructionDelay: 0.5
+  pickupSound: {fileID: 8300000, guid: 5cd0d3f279eac2d4b87636bc2b863ae6, type: 3}
+  volume: 1
+  isDragging: 0
+  moveSpeed: 5
+  targetSceneTextName: GemScoreText
   duration: 60
 --- !u!114 &-434373011639342694
 MonoBehaviour:
@@ -216,5 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431d2a7ef5c441c47b57ec27be58b3b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealingPickup
-  healAmount: 1
   destructionDelay: 0.5
+  pickupSound: {fileID: 0}
+  volume: 1
+  isDragging: 0
+  moveSpeed: 5
+  targetSceneTextName: GemScoreText
+  healAmount: 1

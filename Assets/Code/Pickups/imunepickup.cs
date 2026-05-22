@@ -1,13 +1,25 @@
 using UnityEngine;
 using System.Collections;
 
-public class PowerUp : MonoBehaviour
+public class PowerUp : PickupBase
 {
+    [Header("PowerUp Settings")]
     public float duration = 60f;
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected override void Start()
     {
-        // Automatically find the PlayerCollision script on the player
+        base.Start();
+    }
+
+    protected override void UpdateUI()
+    {
+        SetUIText(duration.ToString());
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isCollected) return;
+
         if (other.CompareTag("Player"))
         {
             PlayerCollision pc = other.GetComponent<PlayerCollision>();
@@ -18,22 +30,28 @@ public class PowerUp : MonoBehaviour
         }
     }
 
-    IEnumerator ActivatePowerUp(PlayerCollision pc)
+    private IEnumerator ActivatePowerUp(PlayerCollision pc)
     {
-        // Turn on power-up effects
+        isCollected = true;
+
+        if (col != null) col.enabled = false;
+
+        if (anim != null) anim.SetBool("IsPickuped", true);
+
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+        }
+
         pc.isInvincible = true;
         pc.isKillMode = true;
 
-        // Hide the power-up so it can't be picked up again
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        Collider2D col = GetComponent<Collider2D>();
+        yield return new WaitForSeconds(destructionDelay);
         if (sr != null) sr.enabled = false;
-        if (col != null) col.enabled = false;
 
-        // Wait for 60 seconds
-        yield return new WaitForSeconds(duration);
+        float remainingDuration = Mathf.Max(0, duration - destructionDelay);
+        yield return new WaitForSeconds(remainingDuration);
 
-        // Turn off power-up effects
         pc.isInvincible = false;
         pc.isKillMode = false;
 

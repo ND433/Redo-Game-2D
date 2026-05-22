@@ -4,7 +4,7 @@ public class PlayerSizeManager : MonoBehaviour
 {
     [Header("References")]
     public PlayerHealth playerHealth;
-    public GunIsPistol gunScript; // Directly reference your GunIsPistol script
+    public GunIsPistol gunScript;
 
     [Header("Scales")]
     public Vector3 normalScale = new Vector3(1f, 1f, 1f);
@@ -13,7 +13,6 @@ public class PlayerSizeManager : MonoBehaviour
     private void Start()
     {
         if (playerHealth == null) playerHealth = GetComponent<PlayerHealth>();
-        // Automatically find the gun script if not assigned
         if (gunScript == null) gunScript = GetComponentInChildren<GunIsPistol>();
     }
 
@@ -21,28 +20,24 @@ public class PlayerSizeManager : MonoBehaviour
     {
         if (playerHealth == null) return;
 
-        if (playerHealth.health <= 1f) // TINY STATE
+        if (playerHealth.health <= 1f) 
         {
             transform.localScale = normalScale;
 
-            // Disable shooting component
             if (gunScript != null) gunScript.enabled = false;
 
-            // Force ammo to zero
             ForceAmmoToZero();
         }
-        else // BIG STATE
+        else 
         {
             transform.localScale = bigScale;
 
-            // Re-enable shooting
             if (gunScript != null) gunScript.enabled = true;
         }
     }
 
     void ForceAmmoToZero()
     {
-        // Find all guns and set ammoAmount to 0 directly
         GunIsPistol[] guns = GetComponentsInChildren<GunIsPistol>();
         foreach (var gun in guns)
         {

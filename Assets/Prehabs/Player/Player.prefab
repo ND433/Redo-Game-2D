@@ -114,6 +114,8 @@ MonoBehaviour:
   plMaxSpeed: 5
   jumpForce: 28
   gravityScale: 8
+  jumpSound: {fileID: 0}
+  jumpVolume: 1
   groundCheckDistance: 0.5
   groundLayer:
     serializedVersion: 2
@@ -182,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.13959756, y: 0.3328309}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.011
 --- !u!50 &-405510283658727994
 Rigidbody2D:
   serializedVersion: 5
@@ -264,9 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a488f6235b5e6843b942e0369638ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  playerHealthScript: {fileID: 0}
   bounceForce: 8
-  currentSceneName: 1-1
-  gameOverSceneName: Death Screen
+  isInvincible: 0
+  isKillMode: 0
 --- !u!114 &2578438161648202042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,5 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSizeManager
   playerHealth: {fileID: 0}
+  gunScript: {fileID: 0}
   normalScale: {x: 6, y: 3, z: 1}
   bigScale: {x: 6, y: 6, z: 1}

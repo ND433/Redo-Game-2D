@@ -170,7 +170,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.16565438, y: 0.1418187}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.011
 --- !u!95 &8345130839474088162
 Animator:
   serializedVersion: 7
@@ -226,6 +226,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 2
+  deathSound: {fileID: 8300000, guid: 01983f520790978409dc1eced4735ae1, type: 3}
+  soundVolume: 1
+  deathAnimationName: IsDead
+  destructionDelay: 0.5
 --- !u!114 &-3591558684790724366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,3 +258,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShellMode
   shellSpeed: 12
   shellAnimationName: IsShell
+  rollAnimationName: IsRoll

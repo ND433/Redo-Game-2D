@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 372511573}
   - component: {fileID: 372511572}
   m_Layer: 0
-  m_Name: Nummer BT
+  m_Name: 1-1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +854,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372511573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372511573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,7 +4142,7 @@ GameObject:
   - component: {fileID: 1704678538}
   - component: {fileID: 1704678537}
   m_Layer: 0
-  m_Name: Back BT
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4199,19 +4211,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704678538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauzeMenuAndSceneLoader, Assembly-CSharp
-        m_MethodName: StartMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1704678538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5264,6 +5264,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauzeMenuAndSceneLoader
   menuCanvas: {fileID: 0}
+  menuButtons:
+  - {fileID: 1704678537}
+  - {fileID: 372511572}
+  - {fileID: 1973821890}
 --- !u!4 &1887421742
 Transform:
   m_ObjectHideFlags: 0
@@ -5413,7 +5417,7 @@ GameObject:
   - component: {fileID: 1973821891}
   - component: {fileID: 1973821890}
   m_Layer: 0
-  m_Name: Nummer BT
+  m_Name: 1-2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5482,7 +5486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1973821891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102900000, guid: cdb646656bef07049a659f417ce93154, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1973821891
 MonoBehaviour:
   m_ObjectHideFlags: 0

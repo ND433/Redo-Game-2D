@@ -41,7 +41,6 @@ public class PlayerCollision : MonoBehaviour
             }
             else if (!isInvincible && playerHealthScript.health < 2f)
             {
-                // Simple call to take damage. Death logic is now inside PlayerHealth!
                 playerHealthScript.TakeDamage(1f);
             }
         }

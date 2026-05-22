@@ -56,7 +56,6 @@ public class PlayerHealth : MonoBehaviour
         isImmune = false;
     }
 
-    // Keep your existing Heal and UpdateHealthUI methods here...
     public void Heal(float amount) { health += amount; if (health > maxHealth) health = maxHealth; UpdateHealthUI(); }
-    void UpdateHealthUI() { /* ... your existing UI code ... */ }
+    void UpdateHealthUI() { }
 }
